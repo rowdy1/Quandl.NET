@@ -2,11 +2,11 @@
 {
     public class TableMeta
     {
-        public TableMeta(int? next_cursor_id)
+        public TableMeta(string next_cursor_id)
         {
             NextCursorId = next_cursor_id;
         }
 
-        public int? NextCursorId { get; private set; }
+        public string NextCursorId { get; private set; }
     }
 }

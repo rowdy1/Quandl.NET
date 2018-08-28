@@ -6,7 +6,7 @@ namespace Quandl.NET.Helper
     internal static class Filter
     {
         public static Dictionary<string, string> Parse(string filter)
-            => filter.Replace("<=", ".lte=")
+            => filter == null ? null : filter.Replace("<=", ".lte=")
                      .Replace(">=", ".gte=")
                      .Replace("<", ".lt=")
                      .Replace(">", ".gt=")

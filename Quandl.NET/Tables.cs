@@ -26,7 +26,7 @@ namespace Quandl.NET
         /// <param name="token">Cancellation token</param>
         /// <returns>Filtered table</returns>
         public async Task<TableResponse> GetAsync(string datatableCode, string rowFilterCriteria = null, string columnFilterCriteria = null,
-                                                  int? perPage = null, int? cursorId = null, CancellationToken token = default(CancellationToken))
+                                                  int? perPage = null, string cursorId = null, CancellationToken token = default(CancellationToken))
         {
             try
             {
@@ -42,7 +42,7 @@ namespace Quandl.NET
             }
             catch (FlurlHttpException ex)
             {
-                throw ex.ToQuandlException();
+                throw await ex.ToQuandlException();
             }
         }
 
@@ -60,7 +60,7 @@ namespace Quandl.NET
         /// <param name="token">Cancellation token</param>
         /// <returns>Filtered table</returns>
         public async Task<Stream> GetAsync(string datatableCode, ReturnFormat returnFormat, string rowFilterCriteria = null, string columnFilterCriteria = null,
-                                           bool? export = null, int? perPage = null, int? cursorId = null, CancellationToken token = default(CancellationToken))
+                                           bool? export = null, int? perPage = null, string cursorId = null, CancellationToken token = default(CancellationToken))
         {
             try
             {
@@ -77,7 +77,7 @@ namespace Quandl.NET
             }
             catch (FlurlHttpException ex)
             {
-                throw ex.ToQuandlException();
+                throw await ex.ToQuandlException();
             }
         }
 
@@ -100,7 +100,7 @@ namespace Quandl.NET
             }
             catch (FlurlHttpException ex)
             {
-                throw ex.ToQuandlException();
+                throw await ex.ToQuandlException();
             }
         }
 
@@ -123,7 +123,7 @@ namespace Quandl.NET
             }
             catch (FlurlHttpException ex)
             {
-                throw ex.ToQuandlException();
+                throw await ex.ToQuandlException();
             }
         }
 
@@ -147,7 +147,7 @@ namespace Quandl.NET
             }
             catch (FlurlHttpException ex)
             {
-                throw ex.ToQuandlException();
+                throw await ex.ToQuandlException();
             }
         }
     }

@@ -31,7 +31,7 @@ namespace Quandl.NET
         /// <returns>Get datatable response</returns>
         [Obsolete("Please replace it with GetAsync() method from Tables class")]
         public async Task<TableResponse> GetAsync(string databaseCode, string datatableCode, Dictionary<string, List<string>> rowFilter = null,
-            List<string> columnFilter = null, int? nextCursorId = null, CancellationToken token = default(CancellationToken))
+            List<string> columnFilter = null, string nextCursorId = null, CancellationToken token = default(CancellationToken))
         {
             try
             {
@@ -48,7 +48,7 @@ namespace Quandl.NET
             }
             catch (FlurlHttpException ex)
             {
-                throw ex.ToQuandlException();
+                throw await ex.ToQuandlException();
             }
         }
 
@@ -66,7 +66,7 @@ namespace Quandl.NET
         /// <returns>Stream of csv file (.csv)</returns>
         [Obsolete("Please replace it with GetAsync() method from Tables class")]
         public async Task<Stream> GetCsvAsync(string databaseCode, string datatableCode, Dictionary<string, List<string>> rowFilter = null,
-            List<string> columnFilter = null, bool? fullResult = null, int? nextCursorId = null, CancellationToken token = default(CancellationToken))
+            List<string> columnFilter = null, bool? fullResult = null, string nextCursorId = null, CancellationToken token = default(CancellationToken))
         {
             try
             {
@@ -86,7 +86,7 @@ namespace Quandl.NET
             }
             catch (FlurlHttpException ex)
             {
-                throw ex.ToQuandlException();
+                throw await ex.ToQuandlException();
             }
         }
 
@@ -110,7 +110,7 @@ namespace Quandl.NET
             }
             catch (FlurlHttpException ex)
             {
-                throw ex.ToQuandlException();
+                throw await ex.ToQuandlException();
             }
         }
 
@@ -134,7 +134,7 @@ namespace Quandl.NET
             }
             catch (FlurlHttpException ex)
             {
-                throw ex.ToQuandlException();
+                throw await ex.ToQuandlException();
             }
         }
     }

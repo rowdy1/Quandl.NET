@@ -2,13 +2,11 @@
 {
     public class TableMetadataResponse
     {
-        private TableMetadata _datatable;
-
         public TableMetadataResponse(TableMetadata datatable)
         {
-            _datatable = datatable;
+            Datatable = datatable;
         }
 
-        public TableMetadata Datatable => _datatable;
+        public TableMetadata Datatable { get; }
     }
 }
